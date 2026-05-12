@@ -1,0 +1,12 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prevMap = {}
+        
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in prevMap:
+                return [prevMap[diff], i]
+            prevMap[num] = i
+
+# time O(n) for loop
+# space O(n) grow based on the input array
